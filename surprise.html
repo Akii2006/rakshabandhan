@@ -49,10 +49,11 @@
 
     <!-- =========================
          MAIN PAGE
-         HIDDEN AT FIRST
          ========================= -->
 
     <div id="mainPage" style="display: none;">
+
+        <!-- NAVIGATION -->
 
         <nav>
 
@@ -87,6 +88,10 @@
         </nav>
 
 
+        <!-- =========================
+             FINAL SURPRISE SECTION
+             ========================= -->
+
         <section class="final-page">
 
             <div class="big-rakhi">
@@ -106,52 +111,121 @@
 
 
             <p>
-                One sister ❤️ One crazy bond 🤜🤛 A thousand memories ✨ And a lifetime of love 💕
+                One sister ❤️ One crazy bond 🤜🤛
+                A thousand memories ✨
+                And a lifetime of love 💕
             </p>
 
 
+            <!-- COUNTUP TITLE -->
+
             <div class="countup-title">
+
                 ✨ Together & Growing Stronger Since 18 July 2006 ✨
+
             </div>
 
-            <!-- LIVE TIME FROM 18-07-2006 -->
+
+            <!-- =========================
+                 LIVE COUNT-UP
+                 ========================= -->
 
             <div id="countdown">
 
-                <div>
-                    <strong id="years">00</strong>
-                    <small>Years</small>
+                <div class="time-box">
+
+                    <strong id="years">
+                        00
+                    </strong>
+
+                    <small>
+                        Years
+                    </small>
+
                 </div>
 
-                <div>
-                    <strong id="months">00</strong>
-                    <small>Months</small>
+
+                <div class="time-box">
+
+                    <strong id="months">
+                        00
+                    </strong>
+
+                    <small>
+                        Months
+                    </small>
+
                 </div>
 
-                <div>
-                    <strong id="days">00</strong>
-                    <small>Days</small>
+
+                <div class="time-box">
+
+                    <strong id="days">
+                        00
+                    </strong>
+
+                    <small>
+                        Days
+                    </small>
+
                 </div>
 
-                <div>
-                    <strong id="hours">00</strong>
-                    <small>Hours</small>
+
+                <div class="time-box">
+
+                    <strong id="hours">
+                        00
+                    </strong>
+
+                    <small>
+                        Hours
+                    </small>
+
                 </div>
 
-                <div>
-                    <strong id="minutes">00</strong>
-                    <small>Minutes</small>
+
+                <div class="time-box">
+
+                    <strong id="minutes">
+                        00
+                    </strong>
+
+                    <small>
+                        Minutes
+                    </small>
+
                 </div>
 
-                <div>
-                    <strong id="seconds">00</strong>
-                    <small>Seconds</small>
+
+                <div class="time-box">
+
+                    <strong id="seconds">
+                        00
+                    </strong>
+
+                    <small>
+                        Seconds
+                    </small>
+
                 </div>
 
             </div>
 
 
-            <!-- SURPRISE MESSAGE -->
+            <!-- =========================
+                 LIVE COUNT DESCRIPTION
+                 ========================= -->
+
+            <div class="live-text">
+
+                ❤️ Our beautiful journey has been going on for:
+
+            </div>
+
+
+            <!-- =========================
+                 SURPRISE MESSAGE
+                 ========================= -->
 
             <div id="surprise">
 
@@ -163,55 +237,82 @@
                     You are my forever squad partner! 😎❤️
                 </strong>
 
-                <br><br> No matter how far we go, this bond stays forever.
+                <br><br>
 
-                <br><br> 🥹🪢❤️
+                No matter how far we go,
+                this bond stays forever.
 
-                <br><br> Love you, Sis! 💖🌸
+                <br><br>
+
+                🥹🪢❤️
+
+                <br><br>
+
+                Love you, Sis! 💖🌸
 
             </div>
 
 
+            <!-- =========================
+                 FINAL PHOTO
+                 ========================= -->
+
             <div class="final-photo">
 
-                <img src="images/bhoomi_8.jpg" alt="Special Memory">
+                <img
+                    src="images/bhoomi_8.jpg"
+                    alt="Special Memory"
+                >
 
             </div>
 
         </section>
 
 
+        <!-- FOOTER -->
+
         <footer>
+
             Forever & Always • Brother ❤️ Sister
+
         </footer>
 
     </div>
 
 
     <!-- =========================
-         JAVASCRIPT
+         JAVASCRIPT FILE
          ========================= -->
 
     <script src="script.js"></script>
 
+
+    <!-- =========================
+         OPEN SURPRISE FUNCTION
+         ========================= -->
+
     <script>
+
         function openSurprisePage() {
 
             // Hide opening screen
             document.getElementById("startScreen").style.display = "none";
 
-            // Show complete page
+            // Show main page
             document.getElementById("mainPage").style.display = "block";
 
-            // Run countup & confetti
-            if (typeof updateCountup === "function") {
-                updateCountup();
-            }
+            // Start count immediately
+            updateCountup();
+
+            // Start confetti
             if (typeof createConfetti === "function") {
+
                 createConfetti();
+
             }
 
         }
+
     </script>
 
 </body>
