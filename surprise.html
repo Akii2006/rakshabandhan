@@ -110,6 +110,10 @@
             </p>
 
 
+            <div class="countup-title">
+                ✨ Together & Growing Stronger Since 18 July 2006 ✨
+            </div>
+
             <!-- LIVE TIME FROM 18-07-2006 -->
 
             <div id="countdown">
@@ -188,6 +192,8 @@
          JAVASCRIPT
          ========================= -->
 
+    <script src="script.js"></script>
+
     <script>
         function openSurprisePage() {
 
@@ -197,138 +203,16 @@
             // Show complete page
             document.getElementById("mainPage").style.display = "block";
 
-            // Start counter
-            updateCounter();
+            // Run countup & confetti
+            if (typeof updateCountup === "function") {
+                updateCountup();
+            }
+            if (typeof createConfetti === "function") {
+                createConfetti();
+            }
 
         }
-
-
-        // Starting Date: 18 July 2006
-        const startDate = new Date(2006, 6, 18, 0, 0, 0);
-
-
-        function updateCounter() {
-
-            const now = new Date();
-
-            let years =
-                now.getFullYear() -
-                startDate.getFullYear();
-
-            let months =
-                now.getMonth() -
-                startDate.getMonth();
-
-            let days =
-                now.getDate() -
-                startDate.getDate();
-
-            let hours =
-                now.getHours() -
-                startDate.getHours();
-
-            let minutes =
-                now.getMinutes() -
-                startDate.getMinutes();
-
-            let seconds =
-                now.getSeconds() -
-                startDate.getSeconds();
-
-
-            // Seconds
-            if (seconds < 0) {
-
-                seconds += 60;
-                minutes--;
-
-            }
-
-
-            // Minutes
-            if (minutes < 0) {
-
-                minutes += 60;
-                hours--;
-
-            }
-
-
-            // Hours
-            if (hours < 0) {
-
-                hours += 24;
-                days--;
-
-            }
-
-
-            // Days
-            if (days < 0) {
-
-                months--;
-
-                const previousMonthDays =
-                    new Date(
-                        now.getFullYear(),
-                        now.getMonth(),
-                        0
-                    ).getDate();
-
-                days += previousMonthDays;
-
-            }
-
-
-            // Months
-            if (months < 0) {
-
-                months += 12;
-                years--;
-
-            }
-
-
-            // Display
-
-            document.getElementById("years").innerText =
-                String(years).padStart(2, "0");
-
-            document.getElementById("months").innerText =
-                String(months).padStart(2, "0");
-
-            document.getElementById("days").innerText =
-                String(days).padStart(2, "0");
-
-            document.getElementById("hours").innerText =
-                String(hours).padStart(2, "0");
-
-            document.getElementById("minutes").innerText =
-                String(minutes).padStart(2, "0");
-
-            document.getElementById("seconds").innerText =
-                String(seconds).padStart(2, "0");
-
-        }
-
-
-        // Update every second
-        setInterval(function() {
-
-            const mainPage =
-                document.getElementById("mainPage");
-
-            if (mainPage.style.display !== "none") {
-
-                updateCounter();
-
-            }
-
-        }, 1000);
     </script>
-
-
-    <script src="script.js"></script>
 
 </body>
 
